@@ -1,0 +1,79 @@
+{% extends "../layout.html" %}
+{% block content %}
+<div lass="content-section">
+    <div class="row mx-auto justify-content-center">
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Ürün Kimde</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa fa-user"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Kime_Verilecek  }}</h3>
+            </div>
+        </div>
+ 
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Ürün Numarası</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fa fa-key"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Ürün_Numarasi  }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Ürün Adı</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fab fa-product-hunt"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Ürün_Ad  }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Ürün Cinsi</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fab fa-product-hunt"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Ürün_Cinsi  }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Fiyatı</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span>&#8378;</span>
+                </div>
+                <h3 class="text-center">{{ inventory.Fiyati  }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Stok Durumu</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-warehouse "></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Stok_Durumu  }}</h3>
+            </div>
+        </div>
+
+        <div class="card m-4" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Stok Tarihi</h5>
+                <div style="font-size: 30px;" class="text-center">
+                    <span><i class="fas fa-calendar-alt"></i></span>
+                </div>
+                <h3 class="text-center">{{ inventory.Stok_Tarihi  }}</h3>
+            </div>
+        </div>
+        <a class="btn btn-outline-success btn-sm mb-3" href="{% url 'update_inventory' inventory.id %}">Güncelle</a>
+        <a class="btn btn-danger btn-sm" href="{% url 'delete_inventory' inventory.id %}">Sil</a>
+    </div>
+</div>
+{% endblock %}

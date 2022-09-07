@@ -1,0 +1,49 @@
+{% extends "../layout.html" %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+<br>
+<br>
+
+
+<div class="col-lg-6 col-md-8 mx-auto">
+    <form method="GET">
+        <div id="box" id="search" class="search-bar">
+            <i class="fa fa-search"></i><input type="text" id="search" placeholder="Kimde hangi ürünler var ..." type="text" name="Kime_Verilecek__icontains" class="textinput form-control"  id="id_Kime_Verilecek__icontains"></i>
+        </div>
+    </form>
+</div>
+
+<div class="content-section"  style="overflow-x:auto;">
+    <table class="table table-striped table-bordered table-hovet">
+        <thead class="thead-dark ">
+            <legend class="border=bottom pd-2 mb-4 text-center">Envarter Listesi</legend>
+             <tr>
+                <th scope="col" > Ürün Kimde</th>
+                <th scope="col">#</th>
+                <th scope="col">Ürün Numarası</th>
+                <th scope="col">Ürün Adı</th>
+                <th scope="col">Ürün Cinsi</th>
+                <th scope="col">Fiyatı</th>
+                <th scope="col">Stok Durumu</th>
+                <th scope="col">Stok Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for inventory in inventories_filter.qs %}
+            <tr style="cursor: pointer; cursor: hand;" onclick="window.location = `{% url 'per_product' inventory.id %}`">
+                <td scope="row">{{ inventory.Kime_Verilecek }}</th>
+                <td scope="row">{{ forloop.counter }}</th>
+                <td scope="row">{{ inventory.Ürün_Numarasi }}</th>
+                <td scope="row">{{ inventory.Ürün_Ad  }}</th>
+                <td scope="row">{{ inventory.Ürün_Cinsi }}</th>
+                <td scope="row">{{ inventory.Fiyati }} ₺</th>
+                <td scope="row">{{ inventory.Stok_Durumu }}</th>
+                <td scope="row">{{ inventory.Stok_Tarihi  }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+</div>
+{% endblock %}
