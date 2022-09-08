@@ -1,4 +1,7 @@
-# Inventory Management System - Turkish
+# Inventory Management System - Turkish.  
+### If you want check website: https://envanter.pythonanywhere.com/
+### Username: admin
+### Password: admin
 
 <img width="1438" alt="Screen Shot 2022-09-07 at 15 33 34" src="https://user-images.githubusercontent.com/84452695/188880062-f1c9cbfb-6148-4b11-b3af-f7e0783b612a.png">
 <img width="1436" alt="Screen Shot 2022-09-07 at 15 34 45" src="https://user-images.githubusercontent.com/84452695/188880140-c0a8c09e-be2b-47fd-ae9f-0506b2878007.png">
